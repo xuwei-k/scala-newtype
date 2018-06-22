@@ -91,8 +91,7 @@ lazy val releasePublishSettings = Seq(
 
 lazy val defaultSettings = Seq(
   defaultScalacOptions,
-  defaultLibraryDependencies,
-  addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
+  defaultLibraryDependencies
 )
 
 lazy val defaultScalacOptions = scalacOptions ++= Seq(
@@ -110,8 +109,8 @@ lazy val defaultLibraryDependencies = libraryDependencies ++= Seq(
   "org.typelevel" %% "macro-compat" % "1.1.1",
   scalaOrganization.value % "scala-reflect" % scalaVersion.value % Provided,
   scalaOrganization.value % "scala-compiler" % scalaVersion.value % Provided,
-  "org.scalacheck" %%% "scalacheck" % "1.13.4" % "test",
-  "org.scalatest" %%% "scalatest" % "3.0.0" % "test"
+  "org.scalacheck" %%% "scalacheck" % "1.14.0" % "test",
+  "org.scalatest" %%% "scalatest" % "3.0.6-SNAP1" % "test"
 )
 
 def scalaPartV = Def.setting(CrossVersion.partialVersion(scalaVersion.value))
